@@ -9,14 +9,20 @@ String path = "./avatares/";
 //Font name (with extension)
 String fontName = "";
 String curr = "";
-int size = 150;
+int imageSize = 150;
 PFont font;
 
 void setup() {
   //Set the same value as size
   size(150, 150);
-  font = createFont(fontName, size/2);
-  textFont(font);
+  
+  if (fontName != "") {
+    font = createFont(fontName, imageSize / 2);
+    textFont(font);
+  } else {
+    textSize(imageSize / 2);
+  }
+  
   textAlign(CENTER, CENTER);
 }
 
@@ -47,7 +53,7 @@ void setBackground(Boolean random) {
 void displayText(String name) {
   setBackground(randomBackground);
   fill(255);
-  text(name, size/2, size/2 - 10);
+  text(name, imageSize / 2, imageSize / 2 - 10);
 }
 
 void saveImage(String pathname, String filename) {
