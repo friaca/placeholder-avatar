@@ -29,7 +29,8 @@ void setup() {
 void draw() {
   for(int i = 0; i < alphabet.length; i++) {
     for(int j = 0; j < alphabet.length; j++) {
-        curr = alphabet[i] + alphabet[j];  
+        curr = alphabet[i] + alphabet[j];
+        setBackground(randomBackground);
         displayText(curr);
         saveImage(path, curr);   
     }
@@ -51,7 +52,6 @@ void setBackground(Boolean random) {
 }
 
 void displayText(String name) {
-  setBackground(randomBackground);
   fill(255);
   text(name, imageSize / 2, imageSize / 2 - 10);
 }
